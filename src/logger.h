@@ -7,7 +7,7 @@
 #include "logevent.h"
 #include "appender.h"
 
-class Logger {
+class Logger : public std::enable_shared_from_this<Logger> {
 public:
     typedef std::shared_ptr<Logger> ptr;
 
@@ -26,10 +26,13 @@ public:
     LogLevel::Level getLevel() const { return _level; }
     void setLevel(LogLevel::Level level) { _level = level; }
 
+    const std::string& getName() const { return _name;}
+
 private:
     std::string _name;
     LogLevel::Level _level;
     std::list<Appender::ptr> _appenders;
+    Formatter::ptr _formatter;
 };
 
 #endif // __LOGGER_H__

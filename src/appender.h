@@ -13,7 +13,7 @@ class Appender {
 public:
     typedef std::shared_ptr<Appender> ptr;
 
-    virtual ~Appender();
+    virtual ~Appender() {};
     virtual void log(LogLevel::Level level, LogEvent::ptr event) = 0;
 
     void setFormatter(Formatter::ptr formatter) { _formatter = formatter; }

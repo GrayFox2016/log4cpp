@@ -1,11 +1,16 @@
 #include "logger.h"
 
 Logger::Logger(const std::string &name)
-    : _name(name) {
+    : _name(name),
+    _level(LogLevel::DEBUG) {
+    _formatter.reset(new Formatter("%d{%Y-%m-%d %H:%M:%S}%T%t%T%F%T[%p]%T[%c]%T%f:%l%T%m%n"));
 
 }
 
 void Logger::addAppender(Appender::ptr appender) {
+    if(!appender->getFormatter()) {
+        appender->setFormatter(_formatter);
+    }
     _appenders.push_back(appender);
 
 }
@@ -20,8 +25,8 @@ void Logger::delAppender(Appender::ptr appender) {
 
 void Logger::log(LogLevel::Level level, LogEvent::ptr event) {
     if (level >= _level) {
-        for (auto &i : _appenders) {
-            i->log(level, event);
+        for (auto &appender : _appenders) {
+            appender->log(level, event);
         }
     }
 }

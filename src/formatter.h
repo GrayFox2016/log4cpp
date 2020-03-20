@@ -4,18 +4,20 @@
 #include <memory>
 #include <string>
 #include <vector>
+#include <iostream>
 #include <ostream>
+#include <map>
 #include "logevent.h"
 
 class Formatter {
 public:
     typedef std::shared_ptr<Formatter> ptr;
-    Formatter(const std::string pattern);
+    Formatter(const std::string& pattern);
 
     void init();
     std::string format(LogEvent::ptr event);
 
-private:
+public:
     class FormatItem {
     public:
         typedef std::shared_ptr<FormatItem> ptr;

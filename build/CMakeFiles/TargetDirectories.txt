@@ -1,0 +1,3 @@
+/home/admin/code/log4cpp/build/CMakeFiles/edit_cache.dir
+/home/admin/code/log4cpp/build/CMakeFiles/rebuild_cache.dir
+/home/admin/code/log4cpp/build/CMakeFiles/log4cpp.dir

@@ -18,6 +18,7 @@ int main(int argc, char const *argv[])
 {
     Logger::ptr logger(new Logger());
     logger->addAppender(Appender::ptr(new StdLogAppender()));
+    
     LogEvent::ptr event(new LogEvent(__FILE__, __LINE__, 0, 1, 2, time(0), "hello"));
 
     logger->log(LogLevel::DEBUG, event);
