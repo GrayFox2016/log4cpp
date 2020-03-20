@@ -1,1 +1,0 @@
-/usr/bin/c++      CMakeFiles/log4cpp.dir/src/loglevel.cc.o CMakeFiles/log4cpp.dir/src/test.cc.o CMakeFiles/log4cpp.dir/src/appender.cc.o CMakeFiles/log4cpp.dir/src/logevent.cc.o CMakeFiles/log4cpp.dir/src/util.cc.o CMakeFiles/log4cpp.dir/src/formatter.cc.o CMakeFiles/log4cpp.dir/src/logger.cc.o  -o log4cpp 

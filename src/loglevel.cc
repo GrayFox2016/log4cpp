@@ -1,4 +1,4 @@
-#include "loglevel.h"
+#include "logger.h"
 
 const char* LogLevel::ToString(LogLevel::Level level) {
     switch(level) {
